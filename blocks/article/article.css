@@ -1,0 +1,11 @@
+.article {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+
+    margin: 12px 0px 30px;
+    width: 100%;
+}

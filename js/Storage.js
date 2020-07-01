@@ -31,9 +31,12 @@ class Storage {
     }
 
     updateElmentById(id,newValue){
+        console.log(id);
+        console.log(this.data)
         const result = this.data.findIndex(item => {
-            item.id == id
+            return item.id == id;
           });
+        console.log(result);
         this.data[result].textValue=newValue;
         this._refresh();
     }

@@ -11,7 +11,6 @@ const storage = new Storage(localStorage, startData);
 //const popupNewPlace = new PopupNewPlace(document.querySelector('.root'));
 
 
-
 //РАЗДЕЛ: Функции
 
 
@@ -24,6 +23,9 @@ function loadStartPage() {
                 return  new Title(item.textValue, pageContainer, item.id, storage);
             break;
 
+            case 'text':
+                return  new Text(item.textValue, pageContainer, item.id, storage);
+            break;
         } 
     });
 

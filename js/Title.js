@@ -10,6 +10,7 @@ class Title {
 
         this.renderElement = this.renderElement.bind(this);
         this.removeElement = this.removeElement.bind(this);
+        this.inputText = this.inputText.bind(this);
         this._setEventListeners();
     }
 
@@ -25,16 +26,18 @@ class Title {
         return title;
     }
 
-
     removeElement () {
         this._delEventListeners();
         this.element.remove();       
     }
 
+    inputText(event) {
+        this.textValue = event.target.textContent;
+        this.storage.updateElmentById(this.id,this.textValue);
+    }
+
     _setEventListeners() {
-//        this.btnLike.addEventListener('click', this._like);
-//        this.btnDelete.addEventListener('click', this._remove);
-//        this.image.addEventListener('click', this._openImage);
+        this.element.addEventListener("input", this.inputText);
       }
 
     _delEventListeners() {

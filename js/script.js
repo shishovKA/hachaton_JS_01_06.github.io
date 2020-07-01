@@ -5,7 +5,7 @@
 //РАЗДЕЛ: Константы
 
 const pageContainer = document.querySelector('.page-container'); //контайнер страницы, куда кладуться элементы
-
+const storage = new Storage(localStorage, startData);
 
 //попапы
 //const popupNewPlace = new PopupNewPlace(document.querySelector('.root'));
@@ -17,24 +17,32 @@ const pageContainer = document.querySelector('.page-container'); //контай�
 
 //функция загрузки начальных данных
 function loadStartPage() {
-    const title =  new Title("Правки", pageContainer);
-    title.renderElement();
+  
+    const startElements = storage.data.map(item => {
+        switch(item.type) {
+            case 'title':
+                return  new Title(item.textValue, pageContainer, item.id, storage);
+            break;
+
+        } 
+    });
+
+    startElements.forEach(element => {
+        if (element !== undefined) {
+        element.renderElement();}
+    });
+     
 }
 
 
 //РАЗДЕЛ: Слушатели событий
 
-/*
-document.body.addEventListener('keydown', keyHandler);
-newPlaceBtn.addEventListener('click', loadNewPlacePopup); //кнопка - открыть форму "Новое место"
-editBtn.addEventListener('click', loadEditPopup); //кнопка - открыть форму "Редактировать профиль"
-avatarBtn.addEventListener('click', loadAvatarPopup);
-*/
 
 //РАЗДЕЛ: Вызов функций и методов
 
 loadStartPage();
 
-console.log(localStorage)
+console.log(localStorage);
+console.log(storage.data);
 
 })();

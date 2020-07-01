@@ -10,4 +10,6 @@
     padding-bottom: 33px;
     margin: 52px 0px;
     border-bottom: 1px solid #E5E5E5;
+
+    outline: 0px solid transparent;
 }

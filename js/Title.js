@@ -1,8 +1,10 @@
 class Title {
 
-    constructor (textValue, container) {
+    constructor (textValue, container, id, storage) {
         this.textValue = textValue;
         this.container = container;
+        this.id = id;
+        this.storage = storage;
 
         this.element = this._create();
 

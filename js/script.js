@@ -58,7 +58,7 @@ function loadStartPage() {
 
 loadStartPage();
 
-localStorage.clear();
+//localStorage.clear();
 
 
 })();

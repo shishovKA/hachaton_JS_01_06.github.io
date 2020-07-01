@@ -20,12 +20,13 @@ class Popup {
     }
 
     createInput(inputOptions) {
-        const  {className,type,name,placeHolder} = inputOptions;
+        const  {className,type,name,placeHolder,pattern} = inputOptions;
         const input = document.createElement('input');
             input.classList.add(className);
             input.type = type;
             input.name = name;
             input.placeholder = placeHolder;
+            //input.pattern = pattern;
         return input;
     }
 
@@ -36,7 +37,7 @@ class Popup {
         const __content = document.createElement('div');
         const __close = document.createElement('img');
         __close.classList.add('popup__close');
-        __close.src = "./images/close.svg";
+        __close.src = "https://image.flaticon.com/icons/svg/753/753345.svg";
         __close.alt = "";
         __content.append(__close);
         popup.append(__content);

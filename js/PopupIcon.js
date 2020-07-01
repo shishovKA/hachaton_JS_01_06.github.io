@@ -1,4 +1,4 @@
-class PopupAvatar extends Popup {
+class PopupIcon extends Popup {
     constructor (container) {
         super(container);
         this._create();
@@ -7,7 +7,7 @@ class PopupAvatar extends Popup {
     _create() {
         super._create();
 
-        const inputLink = this.createInput({className: 'popup__input', type: 'url', name: 'link', placeHolder: 'Ссылка на аватар'});
+        const inputLink = this.createInput({className: 'popup__input', type: 'url', name: 'link', placeHolder: 'Ссылка на иконку'});
 
         const __title = document.createElement('h3');
         __title.classList.add('popup__title');
@@ -19,8 +19,9 @@ class PopupAvatar extends Popup {
         const __button = document.createElement('button');
         __button.classList.add('button');
         __button.classList.add('popup__button');
+        __button.classList.add('popup__button_enabled');
 
-        __title.textContent = 'Обновить аватар';
+        __title.textContent = 'Обновить иконку';
         __button.textContent = 'Сохранить';
         __button.classList.add('popup__button_save');
 

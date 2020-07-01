@@ -11,3 +11,12 @@
 
     outline: 0px solid transparent;
 }
+
+.post-container:hover .buttons {
+    visibility: visible;
+    opacity: 1;
+}
+
+.post-container:focus .buttons {
+    visibility: visible;
+}

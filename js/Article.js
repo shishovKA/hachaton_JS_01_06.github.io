@@ -1,4 +1,4 @@
-class Text extends Title {
+class Article extends Title {
   constructor (textValue, container, id, storage) {
     super(textValue, container, id, storage);
   }
@@ -7,13 +7,12 @@ class Text extends Title {
     const container = document.createElement('div');
     container.classList.add("post-container");
     
-    const paragraph = document.createElement('p');
-
+    const article = document.createElement('h2');
     const buttons = document.createElement('div');
     const addArticle = document.createElement('img');
     addArticle.classList.add('buttons__add-article');
     addArticle.classList.add('button');
-
+    
     addArticle.setAttribute("src", "icons/addArticle.svg");
     const addText = document.createElement('img');
     addText.classList.add('buttons__add-text');
@@ -31,15 +30,15 @@ class Text extends Title {
 
     changeOrder.setAttribute("src", "icons/changeOrder.svg");
     buttons.classList.add('buttons');
-    paragraph.textContent = this.textValue;
-    paragraph.classList.add('text');
-    paragraph.setAttribute("contenteditable", "true");
+    article.classList.add('article');
+    article.setAttribute("contenteditable", "true");
+    article.textContent = this.textValue;
     buttons.append(addArticle);
     buttons.append(addText);
     buttons.append(deleteBlock);
     buttons.append(changeOrder);
 
-    container.append(paragraph);
+    container.append(article);
     container.append(buttons);
     return container;
   }

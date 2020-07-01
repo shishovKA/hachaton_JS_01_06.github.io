@@ -6,9 +6,18 @@
     line-height: 36px;
     color: #000000;
 
+    position: relative;
     margin: 12px 0px 30px;
     width: 100%;
 
     outline: 0px solid transparent;
 }
 
+.post-container:hover .buttons {
+    visibility: visible;
+    opacity: 1;
+}
+
+.post-container:focus .buttons {
+    visibility: visible;
+}

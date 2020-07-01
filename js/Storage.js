@@ -31,13 +31,13 @@ class Storage {
     }
 
     updateElmentById(id,newValue){
-        console.log(id);
-        console.log(this.data)
         const result = this.data.findIndex(item => {
             return item.id == id;
           });
-        console.log(result);
-        this.data[result].textValue=newValue;
+
+        if (this.data[result].hasOwnProperty('textValue')) {this.data[result].textValue=newValue;}
+        if (this.data[result].hasOwnProperty('link')) {this.data[result].link=newValue;}
+
         this._refresh();
     }
 

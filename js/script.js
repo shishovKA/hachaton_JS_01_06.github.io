@@ -6,6 +6,8 @@
 
 const pageContainer = document.querySelector('.page-container'); //контайнер страницы, куда кладуться элементы
 const storage = new Storage(localStorage, startData);
+const popup = new PopupIcon(document.body);
+
 
 //попапы
 //const popupNewPlace = new PopupNewPlace(document.querySelector('.root'));
@@ -23,8 +25,16 @@ function loadStartPage() {
                 return  new Title(item.textValue, pageContainer, item.id, storage);
             break;
 
+            case 'article':
+                return  new Article(item.textValue, pageContainer, item.id, storage);
+            break;
+
             case 'text':
                 return  new Text(item.textValue, pageContainer, item.id, storage);
+            break;
+
+            case 'icon':
+                return  new Icon(item.link, pageContainer, item.id, storage, popup);
             break;
         } 
     });
@@ -37,14 +47,18 @@ function loadStartPage() {
 }
 
 
+
+
+
 //РАЗДЕЛ: Слушатели событий
+
 
 
 //РАЗДЕЛ: Вызов функций и методов
 
 loadStartPage();
 
-console.log(localStorage);
-console.log(storage.data);
+localStorage.clear();
+
 
 })();

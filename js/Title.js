@@ -5,7 +5,6 @@ class Title {
         this.container = container;
         this.id = id;
         this.storage = storage;
-
         this.element = this._create();
 
         this.renderElement = this.renderElement.bind(this);

@@ -113,7 +113,7 @@ class Article extends Title {
       id: 0
     }
 
-    this.storage.insertNewPost(0,post);
+    this.storage.insertNewPost(2,post);
     const text = new Text(post.textValue, this.container, post.id, this.storage);
     text.renderElement();
 

@@ -2,13 +2,12 @@ class Storage {
 
     constructor (localStorage,startData) {
         this.storage = localStorage;
-        this.length = this.storage.length;
         this.insertNewPost = this.insertNewPost.bind(this);
         this.getId = this.getId.bind(this);
         this.removePost = this.removePost.bind(this);
 
-        if (this.length !== 0) {
-            this.data = JSON.parse(this.storage.data);
+        if (this.storage.getItem('data_hachaton') !== null) {
+            this.data = JSON.parse(this.storage['data_hachaton']);
         }
 
         else {
@@ -49,7 +48,7 @@ class Storage {
 
     _refresh() {
         this.storage.clear();
-        this.storage.data = JSON.stringify(this.data);
+        this.storage['data_hachaton'] = JSON.stringify(this.data);
     }
 
     updateElmentById(id,newValue){
